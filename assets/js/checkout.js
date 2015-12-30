@@ -1,5 +1,7 @@
 $(function () {
-
+			//hide check out info div on load
+			$("#checkout_info").hide();
+			
 			var $cart_data = [];
 			  
 			  if(localStorage.getItem("cart")){
@@ -26,6 +28,23 @@ $(function () {
 				buttonup_class: "btn btn-link"
             });
 			
+		$("[data-toggle='collapse']").click(function () {
+			var $this = $(this);
+			/*$("[data-collapse-group='myDivs']:not([data-target='" + $this.data("target") + "'])").each(function () {
+				$($(this).data("target")).removeClass("in").addClass('collapse');
+			});*/
+			console.log('data toggle');
+			$("[data-action='showdetails']").show();
+			$("#cartdetails").hide();
+			$("#checkout_info").show();
+		});
+		
+		$("[data-action='showdetails']").click(function () {
+			var $this = $(this);
+			$this.hide();
+			$("#cartdetails").show();
+			$("#checkout_info").hide();
+		});
 		
 			
 });
