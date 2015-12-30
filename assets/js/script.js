@@ -37,7 +37,7 @@ setCartCount();
 	
 		var xhr_dlogin = $.get( "views/cart.html", function( cart_view ) {
 		
-			var $total = parseFloat(localStorage.getItem("cart_total"), 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+			var $total = formatCurrency(localStorage.getItem("cart_total"));
 			cart_view = cart_view.replace("{{cart_total}}", $total);
 			$( "nav" ).append( cart_view );
 			
@@ -46,7 +46,8 @@ setCartCount();
 		 //empty button hook
 		 $("#btnEmptyCart").click(function(){
 					//if(localStorage.getItem("cart")){
-					log('in empty car');
+						log('in empty car');
+						localStorage.setItem("cart", "");
 						localStorage.removeItem("cart");
 						$("#btnCheckout").disabled = true;
 						$("#btnEmptyCart").disabled = true;
@@ -428,6 +429,10 @@ setCartCount();
 	
 	function fnAddToCart($pid){
 	$(".shopping-cart").hide();
+	
+	$("#btnCheckout").disabled = false;
+	$("#btnEmptyCart").disabled = false;
+						
 		products.forEach(function (item) {
 		
 			var cart = [];
@@ -445,7 +450,9 @@ setCartCount();
 							price: item.price,
 							description: item.description,
 							qty:1,
-							image_link: item.image_link.trim()
+							image_link: item.image_link.trim(),
+							total:item.price
+							
 						};
 						var index=0;
 						$.each(cart, function(i, product){
@@ -457,6 +464,7 @@ setCartCount();
 								
 								$dup = true;
 								product["qty"] = existing_qty + 1;
+								product["total"] = formatCurrency( parseFloat(product["price"] * product["qty"]) );
 								
 								var temp =  jQuery.extend(true, {}, product);
 								log('temp ' + JSON.stringify(temp));

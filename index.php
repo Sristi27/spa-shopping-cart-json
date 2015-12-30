@@ -261,6 +261,7 @@ require_once 'config.php';
 	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 	<script src="assets/js/script.js"></script>
 	<script src="assets/js/init_login_view.js"></script>
+	<script src="assets/js/helpers.js"></script>
 
 
 </body>
