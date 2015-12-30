@@ -1,3 +1,9 @@
+<?php
+session_start();
+include_once 'Dbconnect.php';
+require_once 'config.php';
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
 
-	<title>Fashion U!</title>
+	<title><?php SITE_TITLE ?></title>
 
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
 	<link href="assets/css/styles.css" rel="stylesheet">
@@ -23,24 +29,28 @@
 
 <div class="shb-nav-top">
   <div class="page-width">
-  <a href="http://www.shopify.com" class="shb-nav-item hide--mobile">Start selling with Shopify</a>
+  <a href="index.php" class="shb-nav-item hide--mobile"><?php SITE_TITLE ?></a>
   
   <div class="shb-user shb-logged-out">
-        <a href="https://ecommerce.shopify.com/accounts?return_to=%2Fc%2Fecommerce-design%2Ft%2Fchanging-css-for-main-menu-navigation-168550">Login</a>
-        <a href="/accounts/new" class="shb-button shb-nav-last-child">Register</a>
-		
-		<a class="shb-user account" >My Account</a>
+  
+  <?php if(isset($_SESSION['user'])!="") : ?>
+  
+			<a class="shb-user account">My Account</a>
 			<div class="submenu">
 				<ul class="root">
-				<li ><a href="#Dashboard" >Dashboard</a></li>
-				<li ><a href="#Profile" >Profile</a></li>
-				<li ><a href="#settings">Settings</a></li>
+				<li ><a class="submenu_item" href="#Orders">Orders</a></li>
+				<li ><a href="#Profile">Profile</a></li>
 				<li ><a href="#feedback">Send Feedback</a></li>
 				</ul>
-			</div>	
+			</div>
+	<?php else: ?>
+	
+        <a href="login.php">Login</a>
+        <a href="/accounts/new" class="shb-button shb-nav-last-child">Register</a>
+	<?php endif; ?>
+		
       </div>
 
-	
   </div>
 </div>
 
@@ -93,8 +103,7 @@
 	<span class="cartcount"></span></a>
 </li>
 
-
-        </ul>
+</ul>
 
         <ul class="marketing-nav__items marketing-nav__user">
           
@@ -144,8 +153,6 @@
   </div>
 </div>
 
-
-  
 </div>
 
 	<div id="PageContainer">

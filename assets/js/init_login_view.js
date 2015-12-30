@@ -1,5 +1,3 @@
-$(document).ready(function()
-{
 
 $(".account").click(function()
 {
@@ -35,5 +33,4 @@ $(document).mouseup(function()
 {
 $(".submenu").hide();
 $(".account").attr('id', '');
-});
 });

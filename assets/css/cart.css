@@ -124,12 +124,17 @@ nav ul li a:hover {
   margin: 25px 0 15px 0;
 }
 
-.emptycart {
- width:100px;
- height:8px;
- float: middle;
- margin-left:90px;
- text-align: center;
+#btnEmptyCart {
+  
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+  border-radius: 3px;
+  font-size: 12px;
+  margin: 25px 0 15px 0;
+  height:35px;
 }
 .button:hover {
   background: #729ef9;
@@ -168,20 +173,7 @@ height: 17px;
 text-align:left;
 }
 
-.submenu
-{
-background: #fff;
-position: absolute;
-top: -12px;
-left: -20px;
-z-index: 100;
-width: 135px;
-display: none;
-margin-left: 10px;
-padding: 40px 0 5px;
-border-radius: 6px;
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
-}
+
 .dropdown li a 
 {
 color: #555555;
@@ -199,23 +191,7 @@ background:#155FB0;
 color: #FFFFFF;
 text-decoration: none;
 }
-a.account 
-{
-display:none;
-font-size: 16px;
-line-height: 16px;
-color: #777777;
-position: absolute;
-z-index: 110;
-display: block;
-padding: 11px 0 0 20px;
-height: 28px;
-width: 121px;
-margin: -11px 0 0 -10px;
-text-decoration: none;
-background: url(icons/arrow.png) 116px 17px no-repeat;
-cursor:pointer;
-}
+
 .root
 {
 list-style:none;
