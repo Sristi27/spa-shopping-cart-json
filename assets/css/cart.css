@@ -1,4 +1,3 @@
-
 .lighter-text {
   color: #ABB0BE;
 }
@@ -15,10 +14,13 @@ nav {
 nav .navbar-left {
   float: left;
 }
-nav .navbar-right {
+.marketing-nav__items .navbar-right {
   float: right;
+  margin-left:120px;
 }
+
 nav ul li {
+list-style-type: none;
   padding-left: 20px;
 }
 nav ul li a {
@@ -34,7 +36,7 @@ nav ul li a:hover {
   width: 80%;
 }
 
-.badge {
+.cartcount {
   background-color: #6394F8;
   border-radius: 10px;
   color: white;
@@ -45,7 +47,6 @@ nav ul li a:hover {
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
-  display:none;
 }
 
 .shopping-cart {
@@ -138,4 +139,89 @@ nav ul li a:hover {
   content: "";
   display: table;
   clear: both;
+}
+
+/************************** LOGIN NAV ******************************************/
+/*******************************************************************************/
+.dropdown 
+{
+display:none;
+font-size:16px;
+float: right;
+color: #777777;
+margin: 3px -22px 0 0;
+width: 143px;
+position: relative;
+height: 17px;
+text-align:left;
+}
+
+.login 
+{
+font-size:16px;
+float: right;
+color: #777777;
+margin: 3px -22px 0 0;
+width: 143px;
+position: relative;
+height: 17px;
+text-align:left;
+}
+
+.submenu
+{
+background: #fff;
+position: absolute;
+top: -12px;
+left: -20px;
+z-index: 100;
+width: 135px;
+display: none;
+margin-left: 10px;
+padding: 40px 0 5px;
+border-radius: 6px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+.dropdown li a 
+{
+color: #555555;
+display: block;
+font-family: arial;
+font-weight: bold;
+padding: 6px 15px;
+cursor: pointer;
+text-decoration:none;
+}
+
+.dropdown li a:hover
+{
+background:#155FB0;
+color: #FFFFFF;
+text-decoration: none;
+}
+a.account 
+{
+display:none;
+font-size: 16px;
+line-height: 16px;
+color: #777777;
+position: absolute;
+z-index: 110;
+display: block;
+padding: 11px 0 0 20px;
+height: 28px;
+width: 121px;
+margin: -11px 0 0 -10px;
+text-decoration: none;
+background: url(icons/arrow.png) 116px 17px no-repeat;
+cursor:pointer;
+}
+.root
+{
+list-style:none;
+margin:0px;
+padding:0px;
+font-size: 11px;
+padding: 11px 0 0 0px;
+border-top:1px solid #dedede;
 }

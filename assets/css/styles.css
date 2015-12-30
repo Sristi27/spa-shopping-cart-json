@@ -16,6 +16,104 @@ h1, h3{
 	The Header
 ------------------*/
 
+.shb-nav-top {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1410px;
+    height: 30px;
+    font-size: 12px;
+    background-color: #2a2c2e;
+    z-index: 1100;
+
+}
+.shb-user {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 40px;
+}
+
+.shb-logged-out {
+    top: 2px;
+}
+
+.shb-nav-top .page-width {
+    height: 30px;
+}
+@media screen and (min-width: 61.875em)
+.page-width {
+    width: 990px;
+}
+
+.shb-nav-top a {
+    top: 2px;
+    color: #a6a6a6;
+    text-transform: uppercase;
+}
+media="all"
+.shb-nav-top a {
+    top: 2px;
+    color: #a6a6a6;
+    text-transform: uppercase;
+}
+
+changing-css-for-main-menu-navigation-168550media="all"
+.shb-nav-item {
+    float: left;
+    position: relative;
+    visibility: inherit;
+}
+
+
+.shb-user .account 
+{
+display:none;
+font-size: 16px;
+line-height: 16px;
+color: #777777;
+position: absolute;
+z-index: 110;
+padding: 11px 0 0 20px;
+height: 28px;
+width: 121px;
+margin: -11px 0 0 -10px;
+text-decoration: none;
+background: url(icons/arrow.png) 116px 17px no-repeat;
+cursor:pointer;
+}
+
+media="all"
+.page-width {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+media="all"
+main, .footer--main, .footer-bottom, .page-width {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+@media screen and (min-width: 61.875em)
+.page-width {
+    width: 990px;
+}
+media="all"
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
 header {
 	position: fixed;
 	top: 0;

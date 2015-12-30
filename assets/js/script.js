@@ -1,5 +1,12 @@
 $(function () {
 
+$(window).click(function(){
+if( $(".shopping-cart").is(":visible") ){
+	$(".shopping-cart").hide();
+}
+
+});
+
 setCartCount();
 	// Globals variables
 
@@ -27,6 +34,7 @@ setCartCount();
 		$(".shopping-cart").hide();
 		return false;
 	}
+	
 		var xhr_dlogin = $.get( "views/cart.html", function( cart_view ) {
 		
 			var $total = parseFloat(localStorage.getItem("cart_total"), 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
@@ -35,6 +43,19 @@ setCartCount();
 			
 		}).done(function(){
 		 
+		 //empty button hook
+		 $("#btnEmptyCart").click(function(){
+					//if(localStorage.getItem("cart")){
+					log('in empty car');
+						localStorage.removeItem("cart");
+						$("#btnCheckout").disabled = true;
+						$("#btnEmptyCart").disabled = true;
+						$(".shopping-cart").hide();
+						setCartCount();
+				//}
+				$(".main-color-text").html('$0');
+			});
+			
 			var $cart_data = [];
 	  
 			  if(localStorage.getItem("cart")){
@@ -42,23 +63,9 @@ setCartCount();
 			  }
 				
 				if(!$cart_data || $cart_data.length <1){
-					$("#btnEmptyCart").trigger("click");
+					//$("#btnEmptyCart").trigger("click");
 				}
 				
-			  
-			  
-			$("#btnEmptyCart").click(function(){
-					if(localStorage.getItem("cart")){
-					log('in empty car');
-						localStorage.removeItem("cart");
-						$("#btnCheckout").disabled = true;
-						$("#btnEmptyCart").disabled = true;
-						$(".shopping-cart").hide();
-						setCartCount();
-				}
-				$(".main-color-text").html('$0');
-			});
-			
 			var list = $('.shopping-cart-items');
 			
 			var theTemplateScript = $("#cart-template").html();
@@ -485,8 +492,8 @@ setCartCount();
 	function setCartCount(){
 	
 		if(!localStorage.getItem("cart")){
-				$(".badge").html('');
-				$(".badge").hide();
+				$(".cartcount").html('');
+				$(".cartcount").hide();
 				return false;
 			}
 
@@ -494,8 +501,8 @@ setCartCount();
 		
 		if(cart.length <1) return false;
 		
-		$(".badge").show();
-		$(".badge").html(getCartCount());
+		$(".cartcount").show();
+		$(".cartcount").html(getCartCount());
 	}
 	
 	function getCartCount(){

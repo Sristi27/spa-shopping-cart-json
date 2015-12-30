@@ -2,6 +2,7 @@
     <div class="shopping-cart-header">
       <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
       <div class="shopping-cart-total">
+	  <a href="#" class="button emptycart" id="btnEmptyCart">Empty Cart</a>
         <span class="lighter-text">Total:</span>
         <span class="main-color-text">${{cart_total}}</span>
       </div>
@@ -11,7 +12,7 @@
 		<script id="cart-template" type="x-handlebars-template">​
 			{{#each this}}
 				  <li class="clearfix" data-index="{{id}}">
-					<img src="{{image_link}}" alt="item1" />
+					<!--<img src="{{image_link}}" alt="item1" />-->
 					<span class="item-name">{{description}}</span>
 					<span class="item-price">${{price}}</span>
 					<span class="item-quantity">Quantity: {{qty}}</span>
@@ -22,5 +23,5 @@
 
     <a href="#" class="button" id="btnCheckout">Checkout</a>
 	
-	<a href="#" class="button emptycart" id="btnEmptyCart">Empty Cart</a>
+	
   </div>
